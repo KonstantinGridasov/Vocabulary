@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gkreduction.myapplication.com.gkreduction.vocabulary.MainActivity">
+
+    <item
+        android:id="@+id/menu_add"
+        android:orderInCategory="100"
+        android:title="@string/action_add"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_load"
+        android:orderInCategory="100"
+        android:title="@string/action_load"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_save"
+        android:orderInCategory="100"
+        android:title="@string/action_save"
+        app:showAsAction="never" />
+
+</menu>

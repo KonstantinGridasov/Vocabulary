@@ -1,0 +1,22 @@
+{
+  "verbs": [
+    {
+      "text": "ходить",
+      "form1": "go",
+      "form2": "went",
+      "form3": "gone"
+    }
+  ],
+  "words": [
+    {
+      "text": "кофе",
+      "translate": "coffee"
+    }
+  ],
+  "idioms": [
+    {
+      "text": "Мне грустно",
+      "translate": "I feel blue"
+    }
+  ]
+}
