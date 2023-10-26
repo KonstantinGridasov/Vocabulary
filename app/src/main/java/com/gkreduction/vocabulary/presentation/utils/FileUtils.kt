@@ -32,7 +32,7 @@ fun getJsonDataFromAsset(context: Context, uri: Uri): String? {
     return jsonString
 }
 
-fun getList(context: Context, uri: Uri): List<BaseWord> {
+fun getDataBdByUri(context: Context, uri: Uri): List<BaseWord> {
     val jsonFileString = getJsonDataFromAsset(context, uri)
     val gson = Gson()
     val baseJsonType = object : TypeToken<BaseJsonFile>() {}.type
@@ -46,7 +46,7 @@ fun getList(context: Context, uri: Uri): List<BaseWord> {
     return list
 }
 
-fun saveList(base: List<BaseWord>, context: Context) {
+fun saveBdToFileJson(base: List<BaseWord>, context: Context) {
     val idiom = ArrayList<BaseWord.Idiom>()
     val word = ArrayList<BaseWord.Word>()
     val verb = ArrayList<BaseWord.IrVerb>()
@@ -71,9 +71,11 @@ fun saveList(base: List<BaseWord>, context: Context) {
     val file = File(folder, "vocabulary.json")
     if (!file.exists())
         file.createNewFile()
+
     val stream = FileOutputStream(file)
     stream.use { it ->
         it.write(string.toByteArray())
+
     }
 
 }

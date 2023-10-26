@@ -5,7 +5,7 @@ import com.gkreduction.vocabulary.data.db.entity.IrVerbDb
 
 @Dao
 interface IrVerbDao {
-    @Query("SELECT * FROM ir_verb_db ORDER BY RANDOM()")
+    @Query("SELECT * FROM ir_verb_db ")
     suspend fun getRandomListIrVerbs(): List<IrVerbDb>?
 
     @Query("SELECT * FROM ir_verb_db ORDER BY RANDOM() LIMIT 1")

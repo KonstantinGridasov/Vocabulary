@@ -32,6 +32,30 @@ class ExamFragment : Fragment() {
         viewModel.getCardExam()
     }
 
+    override fun onStart() {
+        super.onStart()
+        initListeners()
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
+    private fun setTextByBaseWord(word: BaseWord?) {
+        var text = "TODO"
+        if (word != null)
+            text = when (word) {
+                is BaseWord.Word -> word.text
+                is BaseWord.Idiom -> word.text
+                is BaseWord.IrVerb -> word.text
+            }
+        binding.textQuestion.text = text
+    }
+
+
     private fun initListeners() {
         activity?.let {
             viewModel.baseWord.observe(it) { word ->
@@ -43,30 +67,6 @@ class ExamFragment : Fragment() {
                 viewModel.getCardExam()
             }
         }
-    }
-
-
-    override fun onStart() {
-        super.onStart()
-        initListeners()
-
-    }
-
-    private fun setTextByBaseWord(word: BaseWord?) {
-        var text = "TODO"
-        if (word != null)
-            text = when (word) {
-                is BaseWord.Word -> word.text
-                is BaseWord.Idiom -> word.text
-                is BaseWord.IrVerb -> word.text
-            }
-        binding.textQuestion.text = text
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 

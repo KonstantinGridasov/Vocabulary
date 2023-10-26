@@ -16,27 +16,34 @@ class CustomToolbar @JvmOverloads constructor(
 
     private var image: ImageView? = null
     private var textToolBar: TextView? = null
-    private var onItemClickListener = {}
+    private var onTextClickListener = {}
+    private var onImageClickListener = {}
 
 
     init {
         LayoutInflater.from(context).inflate(R.layout.toolbar_view, this)
         image = findViewById(R.id.toolbar_settings)
         textToolBar = findViewById(R.id.toolbar_text)
-        image?.setOnClickListener { onItemClickListener.invoke() }
+
+        image?.setOnClickListener { onImageClickListener.invoke() }
+        textToolBar?.setOnClickListener { onTextClickListener.invoke() }
     }
 
 
-    fun setVisibilityToolbar(destinationId: Int) {
+    fun setVisibilityImageToolbar(destinationId: Int) {
         when (destinationId) {
-//            R.id.roadmapFragment, R.id.listTitleFragment -> this.visibility = VISIBLE
-            else -> this.visibility = GONE
+            R.id.ExamFragment -> image?.visibility = VISIBLE
+            else -> image?.visibility = GONE
         }
     }
 
 
-    fun setListenerToolbar(function: () -> Unit) {
-        this.onItemClickListener = function
+    fun setListenerImage(function: () -> Unit) {
+        this.onImageClickListener = function
+    }
+
+    fun setListenerText(function: () -> Unit) {
+        this.onTextClickListener = function
     }
 
     fun setTextName(name: String) {

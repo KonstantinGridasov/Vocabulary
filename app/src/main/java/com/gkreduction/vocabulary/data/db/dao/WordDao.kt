@@ -5,7 +5,7 @@ import com.gkreduction.vocabulary.data.db.entity.WordDb
 
 @Dao
 interface WordDao {
-    @Query("SELECT * FROM word_db ORDER BY RANDOM()")
+    @Query("SELECT * FROM word_db")
     suspend fun getRandomListWords(): List<WordDb>?
 
 

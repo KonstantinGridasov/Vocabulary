@@ -14,6 +14,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.gkreduction.vocabulary.presentation.ui.main.fragment.settings.SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+
+    </fragment>
+
+    <fragment
         android:id="@+id/FirstFragment"
         android:name="com.gkreduction.vocabulary.presentation.ui.main.fragment.FirstFragment"
         tools:layout="@layout/fragment_first">

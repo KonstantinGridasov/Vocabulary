@@ -25,6 +25,19 @@ class DbRepositoryImpl(
                     result.add(toBase(it))
                 }
             }
+        wordDao.getRandomListWords()
+            ?.run {
+                forEach {
+                    result.add(toBase(it))
+                }
+            }
+
+        irVerbDao.getRandomListIrVerbs()
+            ?.run {
+                forEach {
+                    result.add(toBase(it))
+                }
+            }
         return result
     }
 
