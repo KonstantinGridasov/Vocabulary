@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gkreduction.vocabulary.presentation.ui.main.fragment.FirstFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/block_question"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100gkdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_10gkdp"
+        android:layout_marginTop="@dimen/_40gkdp"
+        android:layout_marginEnd="@dimen/_10gkdp"
+        app:cardCornerRadius="@dimen/_5gkdp">
+
+        <RelativeLayout
+            android:id="@+id/rl_question"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_question"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:gravity="center"
+                android:padding="@dimen/_5gkdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13gkdp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

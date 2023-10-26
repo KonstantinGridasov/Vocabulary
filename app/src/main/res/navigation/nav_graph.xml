@@ -3,12 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ExamFragment">
+
+
+    <fragment
+        android:id="@+id/ExamFragment"
+        android:name="com.gkreduction.vocabulary.presentation.ui.main.fragment.exam.ExamFragment"
+        tools:layout="@layout/fragment_exam">
+
+    </fragment>
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.gkreduction.vocabulary.presentation.ui.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:name="com.gkreduction.vocabulary.presentation.ui.main.fragment.FirstFragment"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -17,12 +24,13 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.gkreduction.vocabulary.presentation.ui.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:name="com.gkreduction.vocabulary.presentation.ui.main.fragment.SecondFragment"
         tools:layout="@layout/fragment_second">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+
 </navigation>

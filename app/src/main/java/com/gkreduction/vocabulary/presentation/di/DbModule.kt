@@ -5,8 +5,8 @@ import com.gkreduction.vocabulary.data.db.AppDataBase
 import com.gkreduction.vocabulary.data.db.dao.IdiomDao
 import com.gkreduction.vocabulary.data.db.dao.IrVerbDao
 import com.gkreduction.vocabulary.data.db.dao.WordDao
-import com.gkreduction.vocabulary.data.repository.DbRepository
-import com.gkreduction.vocabulary.data.repository.DbRepositoryImpl
+import com.gkreduction.vocabulary.data.repository.db.DbRepository
+import com.gkreduction.vocabulary.data.repository.db.DbRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -6,7 +6,11 @@ import com.gkreduction.vocabulary.data.db.entity.WordDb
 @Dao
 interface WordDao {
     @Query("SELECT * FROM word_db ORDER BY RANDOM()")
-    suspend fun getRandomWord(): List<WordDb>?
+    suspend fun getRandomListWords(): List<WordDb>?
+
+
+    @Query("SELECT * FROM word_db ORDER BY RANDOM() LIMIT 1")
+    suspend fun getRandomWord(): WordDb?
 
     @Transaction
     suspend fun saveWords(list: List<WordDb>) {

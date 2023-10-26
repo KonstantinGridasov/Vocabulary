@@ -6,7 +6,10 @@ import com.gkreduction.vocabulary.data.db.entity.IdiomDb
 @Dao
 interface IdiomDao {
     @Query("SELECT * FROM idiom_db ORDER BY RANDOM()")
-    suspend fun getRandomIdiom(): List<IdiomDb>?
+    suspend fun getRandomListIdioms(): List<IdiomDb>?
+
+    @Query("SELECT * FROM idiom_db ORDER BY RANDOM() LIMIT 1")
+    suspend fun getRandomIdiom(): IdiomDb?
 
     @Transaction
     suspend fun saveIdioms(list: List<IdiomDb>) {

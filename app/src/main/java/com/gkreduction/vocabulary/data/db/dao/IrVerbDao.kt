@@ -1,13 +1,16 @@
 package com.gkreduction.vocabulary.data.db.dao
 
 import androidx.room.*
-import com.gkreduction.vocabulary.data.db.entity.IdiomDb
 import com.gkreduction.vocabulary.data.db.entity.IrVerbDb
 
 @Dao
 interface IrVerbDao {
     @Query("SELECT * FROM ir_verb_db ORDER BY RANDOM()")
-    suspend fun getRandomIrVerb(): List<IrVerbDb>?
+    suspend fun getRandomListIrVerbs(): List<IrVerbDb>?
+
+    @Query("SELECT * FROM ir_verb_db ORDER BY RANDOM() LIMIT 1")
+    suspend fun getRandomIrVerb(): IrVerbDb?
+
 
     @Transaction
     suspend fun saveIrVerbs(list: List<IrVerbDb>) {
