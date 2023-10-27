@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    
+
     // region AppCompatActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initListeners() {
         binding.toolbar.setListenerImage { navigateSettings() }
-        binding.toolbar.setListenerText { navigateToAdd() }
+        binding.toolbar.setListenerText { navigateToList() }
         viewModel.baseWords.observe(this) { list ->
             saveBdToFileJson(list, this)
         }
@@ -170,6 +170,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonNext.setOnClickListener { listener.invoke() }
     }
 
+
     private fun loadBaseListFromDb() {
         viewModel.getList()
     }
@@ -195,6 +196,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToAdd() {
         navController.navigate(R.id.action_FirstFragment_to_SecondFragment)
+    }
+
+    fun navigateToList() {
+        navController.navigate(R.id.ListFragmetn)
     }
 
 

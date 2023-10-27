@@ -21,7 +21,7 @@ class MainViewModel @Inject constructor(var dbRepository: DbRepository) : ViewMo
 
     fun getList() {
         viewModelScope.launch {
-            dbRepository.getWords().let {
+            dbRepository.getFullDb().let {
                 baseWords.value = it
             }
 

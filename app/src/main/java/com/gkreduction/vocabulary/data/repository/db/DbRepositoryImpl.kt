@@ -17,27 +17,11 @@ class DbRepositoryImpl(
     var irVerbDao: IrVerbDao
 ) : DbRepository {
 
-    override suspend fun getWords(): List<BaseWord> {
+    override suspend fun getFullDb(): List<BaseWord> {
         val result = ArrayList<BaseWord>()
-        idiomDao.getRandomListIdioms()
-            ?.run {
-                forEach {
-                    result.add(toBase(it))
-                }
-            }
-        wordDao.getRandomListWords()
-            ?.run {
-                forEach {
-                    result.add(toBase(it))
-                }
-            }
-
-        irVerbDao.getRandomListIrVerbs()
-            ?.run {
-                forEach {
-                    result.add(toBase(it))
-                }
-            }
+        result.addAll(getWords())
+        result.addAll(getIrregularVerb())
+        result.addAll(getIdioms())
         return result
     }
 
@@ -76,6 +60,42 @@ class DbRepositoryImpl(
             else -> getRandomWord()
 
         }
+    }
+
+    override suspend fun getWords(): List<BaseWord> {
+        val result = ArrayList<BaseWord>()
+
+        wordDao.getRandomListWords()
+            ?.run {
+                forEach {
+                    result.add(toBase(it))
+                }
+            }
+
+        return result
+    }
+
+    override suspend fun getIrregularVerb(): List<BaseWord> {
+        val result = ArrayList<BaseWord>()
+
+        irVerbDao.getRandomListIrVerbs()
+            ?.run {
+                forEach {
+                    result.add(toBase(it))
+                }
+            }
+        return result
+    }
+
+    override suspend fun getIdioms(): List<BaseWord> {
+        val result = ArrayList<BaseWord>()
+        idiomDao.getRandomListIdioms()
+            ?.run {
+                forEach {
+                    result.add(toBase(it))
+                }
+            }
+        return result
     }
 
     private fun getListSettings(settings: Settings): ArrayList<Int> {

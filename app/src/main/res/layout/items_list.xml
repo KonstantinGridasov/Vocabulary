@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/root_categories_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3gkdp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/form1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2gkdp"
+            android:layout_marginEnd="@dimen/_2gkdp"
+            android:layout_weight="0.25"
+            android:background="?attr/colorPrimary"
+            android:gravity="center_horizontal|center_vertical"
+            android:minHeight="@dimen/_10gkdp"
+            android:text="sadsadsadsadsadasdasda"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9gkdp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/form2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2gkdp"
+            android:layout_marginEnd="@dimen/_2gkdp"
+            android:layout_weight="0.25"
+            android:background="?attr/colorPrimary"
+            android:gravity="center_horizontal|center_vertical"
+            android:minHeight="@dimen/_10gkdp"
+            android:text="sadsadsadsadsadasdasda"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9gkdp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/form3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2gkdp"
+            android:layout_marginEnd="@dimen/_2gkdp"
+            android:layout_weight="0.25"
+            android:background="?attr/colorPrimary"
+            android:gravity="center_horizontal|center_vertical"
+            android:minHeight="@dimen/_10gkdp"
+            android:text="sadsadsadsadsadasdasda"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9gkdp" />
+
+        <View
+            android:id="@+id/view3"
+
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/translate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2gkdp"
+            android:layout_marginEnd="@dimen/_2gkdp"
+            android:layout_weight="0.25"
+            android:background="?attr/colorPrimary"
+            android:gravity="center_horizontal|center_vertical"
+            android:minHeight="@dimen/_10gkdp"
+            android:text="sadsadsadsadsadasdasda"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9gkdp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_3gkdp"
+        android:background="@color/black" />
+</LinearLayout>
