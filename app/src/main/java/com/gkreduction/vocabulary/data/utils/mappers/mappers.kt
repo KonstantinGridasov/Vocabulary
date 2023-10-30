@@ -6,29 +6,29 @@ import com.gkreduction.vocabulary.data.db.entity.WordDb
 import com.gkreduction.vocabulary.presentation.entity.BaseWord
 
 fun toBase(db: IdiomDb): BaseWord {
-    return BaseWord.Idiom(text = db.text, translate = db.translate)
+    return BaseWord.Idiom(russian = db.russian, translate = db.translate)
 }
 
 fun toBase(db: IrVerbDb): BaseWord {
-    return BaseWord.IrVerb(text = db.text, form1 = db.form1, form2 = db.form2, form3 = db.form3)
+    return BaseWord.IrVerb(russian = db.russian, form1 = db.form1, form2 = db.form2, form3 = db.form3)
 }
 
 fun toBase(db: WordDb): BaseWord {
-    return BaseWord.Word(text = db.text, translate = db.translate)
+    return BaseWord.Word(russian = db.russian, translate = db.translate)
 }
 
 
 fun mapToDb(idiom: BaseWord.Idiom): IdiomDb {
-    return IdiomDb(text = idiom.text, translate = idiom.translate)
+    return IdiomDb(russian = idiom.russian, translate = idiom.translate)
 }
 
 fun mapToDb(word: BaseWord.Word): WordDb {
-    return WordDb(text = word.text, translate = word.translate)
+    return WordDb(russian = word.russian, translate = word.translate)
 }
 
 fun mapToDb(irVerb: BaseWord.IrVerb): IrVerbDb {
     return IrVerbDb(
-        text = irVerb.text,
+        russian = irVerb.russian,
         form1 = irVerb.form1,
         form2 = irVerb.form2,
         form3 = irVerb.form3

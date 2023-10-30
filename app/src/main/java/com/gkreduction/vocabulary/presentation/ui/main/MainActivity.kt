@@ -157,6 +157,11 @@ class MainActivity : AppCompatActivity() {
                 this.resources.getString(R.string.save_settings)
             R.id.ExamFragment -> binding.buttonNext.text =
                 this.resources.getString(R.string.next)
+            R.id.ListFragment -> binding.buttonNext.text =
+                this.resources.getString(R.string.add)
+
+            R.id.AddFragment -> binding.buttonNext.text =
+                this.resources.getString(R.string.save_settings)
         }
     }
 
@@ -194,12 +199,12 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.SettingsFragment)
     }
 
-    private fun navigateToAdd() {
-        navController.navigate(R.id.action_FirstFragment_to_SecondFragment)
+    fun navigateToAdd() {
+        navController.navigate(R.id.AddFragment)
     }
 
     fun navigateToList() {
-        navController.navigate(R.id.ListFragmetn)
+        navController.navigate(R.id.ListFragment)
     }
 
 

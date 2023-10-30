@@ -48,9 +48,9 @@ class ExamFragment : Fragment() {
         var text = "TODO"
         if (word != null)
             text = when (word) {
-                is BaseWord.Word -> word.text
-                is BaseWord.Idiom -> word.text
-                is BaseWord.IrVerb -> word.text
+                is BaseWord.Word -> word.russian
+                is BaseWord.Idiom -> word.russian
+                is BaseWord.IrVerb -> word.russian
             }
         binding.textQuestion.text = text
     }

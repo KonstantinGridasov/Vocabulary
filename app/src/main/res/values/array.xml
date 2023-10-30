@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type_word">
+        <item>Word</item>
+        <item>Irregular verb</item>
+        <item>Idiom</item>
+    </string-array>
+</resources>

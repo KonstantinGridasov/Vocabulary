@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gkreduction.vocabulary.databinding.FragmentListBinding
 import com.gkreduction.vocabulary.presentation.entity.Types
+import com.gkreduction.vocabulary.presentation.ui.main.MainActivity
 import com.gkreduction.vocabulary.presentation.ui.main.fragment.list.adapters.AdapterBaseItem
 import com.gkreduction.vocabulary.presentation.ui.main.fragment.list.adapters.AdapterTypes
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,6 +45,11 @@ class ListFragment : Fragment() {
                 adapterBase.updateItems(list)
             }
 
+        }
+        if (activity is MainActivity) {
+            (activity as MainActivity).setListenerButton {
+                (activity as MainActivity).navigateToAdd()
+            }
         }
     }
 
@@ -81,6 +87,7 @@ class ListFragment : Fragment() {
             Types.IDIOM -> viewModel.getIdiom()
         }
     }
+
 
 
 }

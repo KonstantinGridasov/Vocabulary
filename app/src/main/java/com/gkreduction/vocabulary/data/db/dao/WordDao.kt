@@ -21,13 +21,13 @@ interface WordDao {
 
     @Transaction
     suspend fun saveWord(word: WordDb) {
-        if (isExistWord(word.text)) {
+        if (isExistWord(word.russian)) {
             update(word)
         } else
             insert(word)
     }
 
-    @Query("SELECT EXISTS(SELECT * FROM word_db WHERE text LIKE :text)")
+    @Query("SELECT EXISTS(SELECT * FROM word_db WHERE russian LIKE :text)")
     suspend fun isExistWord(text: String): Boolean
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

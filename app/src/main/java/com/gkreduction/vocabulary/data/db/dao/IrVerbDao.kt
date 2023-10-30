@@ -21,13 +21,13 @@ interface IrVerbDao {
 
     @Transaction
     suspend fun saveIrVerb(irVerb: IrVerbDb) {
-        if (isExistIrVerb(irVerb.text)) {
+        if (isExistIrVerb(irVerb.russian)) {
             update(irVerb)
         } else
             insert(irVerb)
     }
 
-    @Query("SELECT EXISTS(SELECT * FROM ir_verb_db WHERE text LIKE :text)")
+    @Query("SELECT EXISTS(SELECT * FROM ir_verb_db WHERE russian LIKE :text)")
     suspend fun isExistIrVerb(text: String): Boolean
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

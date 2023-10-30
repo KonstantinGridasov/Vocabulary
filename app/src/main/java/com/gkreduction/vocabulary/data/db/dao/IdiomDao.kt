@@ -20,13 +20,13 @@ interface IdiomDao {
 
     @Transaction
     suspend fun saveIdiom(idiom: IdiomDb) {
-        if (isExistIdiom(idiom.text)) {
+        if (isExistIdiom(idiom.russian)) {
             update(idiom)
         } else
             insert(idiom)
     }
 
-    @Query("SELECT EXISTS(SELECT * FROM idiom_db WHERE text LIKE :text)")
+    @Query("SELECT EXISTS(SELECT * FROM idiom_db WHERE russian LIKE :text)")
     suspend fun isExistIdiom(text: String): Boolean
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -31,7 +31,7 @@ class AdapterBaseItem :
                 holder.binding.form3.visibility = View.GONE
                 holder.binding.view3.visibility = View.GONE
                 holder.binding.form1.text = (items[position] as BaseWord.Word).translate
-                holder.binding.translate.text = (items[position] as BaseWord.Word).text
+                holder.binding.translate.text = (items[position] as BaseWord.Word).russian
             }
             is BaseWord.IrVerb -> {
                 holder.binding.form2.visibility = View.VISIBLE
@@ -41,7 +41,7 @@ class AdapterBaseItem :
                 holder.binding.form1.text = (items[position] as BaseWord.IrVerb).form1
                 holder.binding.form2.text = (items[position] as BaseWord.IrVerb).form2
                 holder.binding.form3.text = (items[position] as BaseWord.IrVerb).form3
-                holder.binding.translate.text = (items[position] as BaseWord.IrVerb).text
+                holder.binding.translate.text = (items[position] as BaseWord.IrVerb).russian
 
             }
             is BaseWord.Idiom -> {
@@ -50,7 +50,7 @@ class AdapterBaseItem :
                 holder.binding.form3.visibility = View.GONE
                 holder.binding.view3.visibility = View.GONE
                 holder.binding.form1.text = (items[position] as BaseWord.Idiom).translate
-                holder.binding.translate.text = (items[position] as BaseWord.Idiom).text
+                holder.binding.translate.text = (items[position] as BaseWord.Idiom).russian
             }
         }
 
