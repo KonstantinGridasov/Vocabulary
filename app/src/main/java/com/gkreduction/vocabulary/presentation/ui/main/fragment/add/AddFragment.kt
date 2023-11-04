@@ -60,46 +60,63 @@ class AddFragment : Fragment() {
         binding.typeSpinner.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 initType(p2)
-
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
 
             }
         }
+        activity?.let {
+            viewModel.clear.observe(it) { clear ->
+                clearFiled(clear)
+            }
+        }
+    }
+
+    private fun clearFiled(clear: Boolean?) {
+        if (clear == true) {
+            binding.editRussian.text?.clear()
+            binding.editForm1.text?.clear()
+            binding.editForm2.text?.clear()
+            binding.editTranslate.text?.clear()
+            viewModel.clear.value = false
+        }
     }
 
     private fun initType(pos: Int) {
         when (pos) {
             0, 2 -> {
+                binding.editForm1.visibility = View.GONE
                 binding.editForm2.visibility = View.GONE
-                binding.editForm3.visibility = View.GONE
             }
             1 -> {
+                binding.editForm1.visibility = View.VISIBLE
                 binding.editForm2.visibility = View.VISIBLE
-                binding.editForm3.visibility = View.VISIBLE
             }
         }
     }
 
     private fun getWord(): BaseWord? {
-        return when (binding.typeSpinner.selectedItemPosition) {
-            0 -> BaseWord.Word(
-                russian = binding.editRussian.text.toString(),
-                translate = binding.editTranslate.text.toString()
-            )
-            1 -> BaseWord.IrVerb(
-                form1 = binding.editRussian.text.toString(),
-                form2 = binding.editForm2.text.toString(),
-                form3 = binding.editForm3.text.toString(),
-                russian = binding.editTranslate.text.toString()
-            )
-            2 -> BaseWord.Idiom(
-                russian = binding.editRussian.text.toString(),
-                translate = binding.editTranslate.text.toString()
-            )
-            else -> null
-        }
+        if (checkEmptyFiled(binding.typeSpinner.selectedItemPosition))
+            return when (binding.typeSpinner.selectedItemPosition) {
+                0 -> BaseWord.Word(
+                    russian = binding.editRussian.text.toString(),
+                    translate = binding.editTranslate.text.toString()
+                )
+                1 -> BaseWord.IrVerb(
+                    form1 = binding.editRussian.text.toString(),
+                    form2 = binding.editForm1.text.toString(),
+                    form3 = binding.editForm2.text.toString(),
+                    russian = binding.editTranslate.text.toString()
+                )
+                2 -> BaseWord.Idiom(
+                    russian = binding.editRussian.text.toString(),
+                    translate = binding.editTranslate.text.toString()
+                )
+                else -> null
+            }
+        else
+            return null
     }
 
     override fun onDestroyView() {
@@ -107,5 +124,22 @@ class AddFragment : Fragment() {
         _binding = null
     }
 
+    private fun checkEmptyFiled(position: Int): Boolean {
+        return when (position) {
+            0, 2 -> {
+                !binding.editRussian.text.isNullOrEmpty() &&
+                        !binding.editTranslate.text.isNullOrEmpty()
+            }
+            1 -> {
+                !binding.editRussian.text.isNullOrEmpty() &&
+                        !binding.editForm1.text.isNullOrEmpty() &&
+                        !binding.editForm2.text.isNullOrEmpty() &&
+                        !binding.editTranslate.text.isNullOrEmpty()
+
+
+            }
+            else -> false
+        }
+    }
 
 }

@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10gkdp"
-            android:hint="Word"
+            android:hint="Russian"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="16sp"
@@ -41,12 +41,12 @@
             app:layout_constraintTop_toBottomOf="@id/space_top" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edit_form2"
+            android:id="@+id/edit_form1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10gkdp"
             android:layout_marginTop="@dimen/_10gkdp"
-            android:hint="form2"
+            android:hint="Form1"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="16sp"
@@ -56,18 +56,18 @@
 
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edit_form3"
+            android:id="@+id/edit_form2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10gkdp"
             android:layout_marginTop="@dimen/_10gkdp"
-            android:hint="form3"
+            android:hint="Form2"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_form2" />
+            app:layout_constraintTop_toBottomOf="@id/edit_form1" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edit_translate"
@@ -81,7 +81,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_form3" />
+            app:layout_constraintTop_toBottomOf="@id/edit_form2" />
 
         <Spinner
             android:id="@+id/type_spinner"
