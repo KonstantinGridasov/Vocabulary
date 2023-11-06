@@ -13,7 +13,6 @@ import com.gkreduction.vocabulary.R
 import com.gkreduction.vocabulary.databinding.FragmentAddBinding
 import com.gkreduction.vocabulary.presentation.entity.BaseWord
 import com.gkreduction.vocabulary.presentation.ui.main.MainActivity
-import com.gkreduction.vocabulary.presentation.ui.main.fragment.list.adapters.AdapterBaseItem
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -23,8 +22,6 @@ class AddFragment : Fragment() {
 
     private var _binding: FragmentAddBinding? = null
     private val binding get() = _binding!!
-
-    private var adapterBase = AdapterBaseItem()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +37,12 @@ class AddFragment : Fragment() {
         initListener()
 
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 
     private fun initListener() {
         activity?.let {
@@ -119,10 +122,6 @@ class AddFragment : Fragment() {
             return null
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     private fun checkEmptyFiled(position: Int): Boolean {
         return when (position) {
